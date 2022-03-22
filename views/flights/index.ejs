@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Mongoose Flights</title>
-</head>
-<body>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a class="active" href="/flights">All Flights</a></li>
-        <li><a href="/flights/new">Add Flight</a></li>
-    </ul>
-    <div class="flights">
-    <h1>Flights</h1>
-    <table>
+<%- include('../partials/header') %>
+  <table id="list">
         <thead>
             <tr>
                 <th>Airline</th>
@@ -32,11 +16,10 @@
                 <td><%= f.airport %></td>
                 <td><%= f.flightNo %></td>
                 <td><%= f.departs %></td>
+                <td><a href="flights/<%= f._id %>">Flight Details</a></td>
             </tr>
       <!-- Close the forEach using EJS here -->
             <% }); %>
         </tbody>
   </table>
-  </div>
-</body>
-</html>
+  <%- include('../partials/footer') %>
